@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Priberam Challenge</title>
+    <link rel="stylesheet" href="css/bootstrap-grid.css">
+    <link rel="stylesheet" href="css/bootstrap-grid.rtl.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap.rtl.css">
+    <link rel="stylesheet" href="css/style.css">
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+-->
+
+</head>
+<body>
+    <nav class="navbar">
+        <h1 class="navbar-title">Priberam Challenge</h1>
+        <div class="navbar-menu">
+            <button class="navbar-button" onclick="goStartNew()"> Start New</button>
+        </div>
+    </nav>
+    <main>
+        <div class="container">
+            <div class="row card-container">
+                <div class="card" style="width: 30rem;">
+                    <div class="card-body">
+                        <h3 class="card-title">Continue</h3>
+                        <p>Continue from where you left.</p>
+                        <label for="id">ID:</label><br>
+                        <input class="card-input" type="text" id="id" placeholder="Exemplo: 1, 7, 88...">
+                        <button class="card-button float-right-s" onclick="goContinue()">Continue</button>
+                    </div>
+                </div>
+                <div class="card" style="width: 30rem;">
+                    <div class="card-body">
+                        <h3 class="card-title">Start!</h3>
+                        <p>Start a new Project.</p>
+                        <textarea class="form-control" id="getText"></textarea>
+                        <button class="card-button margin-top-s" onclick="goStartNew()">Start</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row margin-top-xl" id="program">
+                <div class="col input-group">
+                    <textarea class="form-control" id="read"></textarea>
+                </div>
+                <div id="forTable">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Text</th>
+                            <th scope="col">Tag</th>
+                            <th scope="col">Other</th>
+                        </tr>
+                        </thead>
+                        <tbody id="table-body">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="js/jquery-3.6.0.js"></script>
+    <script src="js/program.js"></script>
+</body>
+</html>
