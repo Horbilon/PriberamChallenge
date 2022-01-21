@@ -4,6 +4,15 @@ body {
     font-size: 18px;
 }
 
+p{
+    margin-bottom: 0px;
+}
+
+button:disabled {
+    background-color: #9b9b9b !important;
+}
+
+
 .navbar {
     position: relative;
     display: flex;
@@ -26,15 +35,6 @@ body {
     float: right;
 }
 
-.navbar-button{
-    cursor: pointer;
-    height: 50px;
-    background-color: transparent;
-    border: 0px;
-    font-size: 1.2em;
-    padding: 5px 10px ;
-    color: #f0f0f0;
-}
 
 /* Styling para cards */
 
@@ -86,6 +86,29 @@ body {
     display: grid;
 }
 
+.main-p{
+    border: 0px;
+    font-size: 1.2em;
+}
+
+.main-select{
+    height: 50px;
+    padding: 5px;
+}
+
+.p-s{
+    font-size: 0.8em;
+}
+
+.save{
+    cursor: pointer;
+    height: 50px;
+    border: 0px;
+    font-size: 1.2em;
+    padding: 5px 10px;
+    border-radius: 0px !important;
+}
+
 /* Small Styling */
 
 .float-right-s{
@@ -94,6 +117,13 @@ body {
 
 .margin-top-s{
     margin-top: 0.5em;
+}
+
+
+/* Medium Styling */
+
+.margin-top-m{
+    margin-top: 1.5em;
 }
 
 

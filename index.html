@@ -13,11 +13,11 @@
 -->
 
 </head>
-<body>
+<body onload="loadPage()">
     <nav class="navbar">
         <h1 class="navbar-title">Priberam Challenge</h1>
         <div class="navbar-menu">
-            <button class="navbar-button" onclick="goStartNew()"> Start New</button>
+
         </div>
     </nav>
     <main>
@@ -25,28 +25,42 @@
             <div class="row card-container">
                 <div class="card" style="width: 30rem;">
                     <div class="card-body">
-                        <h3 class="card-title">Continue</h3>
-                        <p>Continue from where you left.</p>
-                        <label for="id">ID:</label><br>
-                        <input class="card-input" type="text" id="id" placeholder="Exemplo: 1, 7, 88...">
-                        <button class="card-button float-right-s" onclick="goContinue()">Continue</button>
-                    </div>
-                </div>
-                <div class="card" style="width: 30rem;">
-                    <div class="card-body">
                         <h3 class="card-title">Start!</h3>
-                        <p>Start a new Project.</p>
+                        <p>Insert a text and hit "start" to launch the program!</p>
                         <textarea class="form-control" id="getText"></textarea>
                         <button class="card-button margin-top-s" onclick="goStartNew()">Start</button>
                     </div>
                 </div>
+                <div class="card" style="width: 30rem;">
+                    <div class="card-body">
+                        <h3 class="card-title">Continue</h3>
+                        <p>Continue from where you left.</p>
+                        <label for="dropIDs">Work ID:</label><br>
+                        <select class="main-select" id="dropIDs" name="id">
+                            <option value="${i}">Select ID</option>
+                        </select>
+                        <button class="card-button float-right-s" onclick="goContinue()">Continue</button>
+                        <p class="margin-top-s p-s">Refresh page if your ID doesn't appear.</p>
+                    </div>
+                </div>
             </div>
             <div class="row margin-top-xl" id="program">
+                <h2>Program</h2>
+                <p class="main-p" >Your Work ID: <b class="main-p" id="workID"></b></p>
+                <p class="margin-top-m">Select text to create data entries.</p>
                 <div class="col input-group">
                     <textarea class="form-control" id="read"></textarea>
-                    <button type="submit" class="btn btn-success" onclick="saveProgess()">Save</button>
                 </div>
-                <div class="margin-top-xl" id="forTable">
+                <div class="margin-top-m">
+                    <button id="saveBTN" type="submit" class="btn btn-success save" disabled onclick="saveProgess()" >Save Project</button>
+                    <p class="margin-top-m">When saving the project, make sure to save the json file into the original place("../PriberamChallenge/js/entries.json"
+                    <br>
+                    If you later want to continue the work that you had done previously, remember your Work ID.
+                    </p>
+                </div>
+                <div class="margin-top-m" id="forTable">
+                    <h4>Entry Table</h4>
+                    <p class="margin-top-m">Give each entry its own tag. You can delete an entry if you don't need it.</p>
                     <table class="table">
                         <thead>
                         <tr>
@@ -61,8 +75,11 @@
                 </div>
             </div>
         </div>
+
     </main>
     <script src="js/jquery-3.6.0.js"></script>
+    <!--<script data-main="js/program.js" src="scripts/require.js"></script>-->
+
     <script src="js/program.js"></script>
 </body>
 </html>
